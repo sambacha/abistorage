@@ -93,7 +93,7 @@ export interface FinalizedABI {
   node: string
   chainABIId: number
   abiActivation: Date
-  abiExpiration: Date
+  abiMoribund: Date
 }
 
 export interface Pin {
