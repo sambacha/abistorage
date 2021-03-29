@@ -1,0 +1,98 @@
+import useSWR from 'swr'
+import filesize from 'filesize'
+import { ABIStorage } from 'abi.storage'
+import Button from '../components/button.js'
+import { getEdgeState } from '../lib/state.js'
+import Layout from '../components/layout.js'
+
+export default function Files() {
+  const { data } = useSWR('edge_state', getEdgeState)
+  let { user, loginUrl = '#', abis = [] } = data ?? {}
+
+  abis = abis
+    .filter(Boolean)
+    .map((n) => {
+      n.created = new Date(n.created)
+      return n
+    })
+    .sort((a, b) => b.created.getTime() - a.created.getTime())
+
+  return (
+    <Layout
+      user={user}
+      loginUrl={loginUrl}
+      navBgColor="nsyellow"
+      title="Files - ABI Storage"
+    >
+      <main className="bg-nsyellow">
+        <div className="mw9 center pv3 ph5 min-vh-100">
+          <div className="flex mb3 items-center">
+            <h1 className="chicagoflf mv4 flex-auto">Files</h1>
+            <Button href="/new-file" className="flex-none" disabled>
+              + Upload
+            </Button>
+          </div>
+          {abis.length ? (
+            <table className="bg-white ba b--black w-100 collapse mb4">
+              <tr className="bb b--black">
+                <th className="pa2 tl bg-nsgray br b--black w-33">Date</th>
+                <th className="pa2 tl bg-nsgray br b--black w-33">CID</th>
+                <th className="pa2 tl bg-nsgray br b--black w-33">Size</th>
+                <th className="pa2 tc bg-nsgray" />
+              </tr>
+              {abis.map((abi) => (
+                <tr className="bb b--black">
+                  <td className="pa2 br b--black">
+                    {abi.created.toISOString().split('T')[0]}
+                  </td>
+                  <td className="pa2 br b--black">
+                    <GatewayLink cid={abi.cid} />
+                  </td>
+                  <td className="pa2 br b--black mw7">
+                    {filesize(abi.size || 0)}
+                  </td>
+                  <td className="pa2">
+                    <form onSubmit={handleDeleteFile}>
+                      <input type="hidden" name="cid" value={abi.cid} />
+                      <Button className="bg-nsorange white" type="submit">
+                        Delete
+                      </Button>
+                    </form>
+                  </td>
+                </tr>
+              ))}
+            </table>
+          ) : (
+            <p className="tc mv5">
+              <span className="f1 dib mb3">😢</span>
+              <br />
+              No files
+            </p>
+          )}
+        </div>
+      </main>
+    </Layout>
+  )
+
+  async function handleDeleteFile(e) {
+    e.preventDefault()
+    if (!confirm('Are you sure? Deleted files cannot be recovered!')) {
+      return
+    }
+    const token = user.tokens['default'] || Object.values(user.tokens)[0]
+    const client = new ABIStorage({ token, endpoint: location.origin })
+    await client.delete(e.target.cid.value)
+    location = '/files'
+  }
+}
+
+function GatewayLink({ cid }) {
+  const href = cid.startsWith('Qm')
+    ? `https://ipfs.io/ipfs/${cid}`
+    : `https://${cid}.ipfs.dweb.link`
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="black">
+      {cid}
+    </a>
+  )
+}

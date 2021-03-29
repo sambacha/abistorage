@@ -1,0 +1,20 @@
+{
+  "name": "website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export -o ../site/public",
+    "start": "next start"
+  },
+  "dependencies": {
+    "filesize": "^6.1.0",
+    "next": "^10.0.0",
+    "abi.storage": "^0.3.7",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "swagger-ui-react": "^3.45.0",
+    "swr": "^0.5.3",
+    "tachyons": "^4.12.0"
+  }
+}
