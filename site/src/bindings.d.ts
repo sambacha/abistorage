@@ -1,3 +1,4 @@
+/** @export bindings */
 export {}
 
 declare global {
@@ -116,9 +117,10 @@ export interface ABI {
    */
   abiActivation?: string
   /**
-   * ABI Expiraction
+   * ABI Moribund
+   * 
    *
    * Timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: YYYY-MM-DDTHH:MM:SSZ.
    */
-  abiExpiration?: string
+  abiMoribund?: string
 }
