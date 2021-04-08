@@ -1,8 +1,9 @@
 {
-  "name": "abi.storage",
+  "name": "abitray",
   "version": "0.0.0-dev",
-  "description": "abi.storage client",
-  "license": "(Apache-2.0 AND MIT)",
+  "private": true,
+  "description": "abitray client",
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "types": "./dist/src/lib.d.ts",
   "module": "./src/lib.js",
@@ -27,9 +28,9 @@
     "test:es": "node test/test.js mocha test/*.spec.js --exit",
     "test:cjs": "node test/test.js mocha dist/test/*.spec.cjs --exit",
     "build": "npm run build:ts && npm run build:cjs",
-    "build:ts": "tsc --build",
-    "build:cjs": "rollup --config rollup.config.js",
-    "typedoc": "typedoc --entryPoints src  --out ../docs/client",
+    "build:ts": "npx tsc --build",
+    "build:cjs": "npx rollup --config rollup.config.js",
+    "typedoc": "npx typedoc --entryPoints src  --out ../docs/client",
     "prepare": "npm run build"
   },
   "dependencies": {
@@ -54,7 +55,5 @@
     "typedoc": "0.20.32",
     "rollup": "2.44.0",
     "rollup-plugin-multi-input": "1.1.1"
-  },
-  "homepage": "https://github.com/ipfs-shipyard/abi.storage/tree/main/client",
-  "bugs": "https://github.com/ipfs-shipyard/abi.storage/issues"
+  }
 }
