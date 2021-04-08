@@ -1,7 +1,7 @@
 import fs from 'fs'
-import { ABIStorage, File } from 'abi.storage'
+import { ABIStorage, File } from 'abitray'
 
-const endpoint = 'https://abi.storage' // the default
+const endpoint = 'https://abitray.com' // the default
 const token = 'API_KEY' // your API key from https://abi.storage/manage
 
 async function main() {
@@ -15,3 +15,4 @@ async function main() {
   console.log(status)
 }
 main()
+/** @exports ABIStorage */
