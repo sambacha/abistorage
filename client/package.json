@@ -45,7 +45,7 @@
     "@types/mocha": "8.2.2",
     "ipfs-unixfs-importer": "6.0.1",
     "ipld": "0.29.0",
-    "ipld-dag-pb": "0.22.0",
+    "ipld-dag-pb": "0.22.2",
     "ipld-in-memory": "8.0.0",
     "multicodec": "3.0.1",
     "multiformats": "4.5.3",
