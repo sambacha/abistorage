@@ -52,7 +52,7 @@
     "multihashing-async": "2.1.2",
     "playwright-test": "2.1.0",
     "typedoc": "0.20.32",
-    "rollup": "2.22.1",
+    "rollup": "2.44.0",
     "rollup-plugin-multi-input": "1.1.1"
   },
   "homepage": "https://github.com/ipfs-shipyard/abi.storage/tree/main/client",
