@@ -8,13 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "filesize": "^6.1.0",
-    "next": "^10.0.0",
+    "filesize": "6.1.0",
+    "next": "10.1.3",
     "abi.storage": "^0.3.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "swagger-ui-react": "^3.45.0",
-    "swr": "^0.5.3",
-    "tachyons": "^4.12.0"
+    "swagger-ui-react": "3.46.0",
+    "swr": "0.5.5",
+    "tachyons": "4.12.0"
   }
 }
