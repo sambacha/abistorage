@@ -51,7 +51,7 @@
     "multicodec": "3.0.1",
     "multiformats": "4.5.3",
     "multihashing-async": "2.1.2",
-    "playwright-test": "2.1.0",
+    "playwright-test": "3.0.7",
     "typedoc": "0.20.32",
     "rollup": "2.44.0",
     "rollup-plugin-multi-input": "1.1.1"
