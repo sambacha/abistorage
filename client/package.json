@@ -53,7 +53,7 @@
     "multihashing-async": "2.1.2",
     "playwright-test": "2.1.0",
     "typedoc": "0.20.32",
-    "rollup": "2.44.0",
+    "rollup": "2.45.2",
     "rollup-plugin-multi-input": "1.1.1"
   }
 }
