@@ -49,7 +49,7 @@
     "ipld-dag-pb": "0.22.2",
     "ipld-in-memory": "8.0.0",
     "multicodec": "3.0.1",
-    "multiformats": "4.6.3",
+    "multiformats": "7.0.0",
     "multihashing-async": "2.1.2",
     "playwright-test": "2.1.0",
     "typedoc": "0.20.32",
