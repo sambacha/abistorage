@@ -14,7 +14,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "swagger-ui-react": "3.46.0",
-    "swr": "0.5.5",
+    "swr": "0.5.6",
     "tachyons": "4.12.0"
   }
 }
