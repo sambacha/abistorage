@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@web-std/blob": "2.0.1",
-    "@web-std/fetch": "1.0.0",
+    "@web-std/fetch": "1.1.0",
     "@web-std/file": "1.0.1",
     "@web-std/form-data": "2.0.0"
   },
